@@ -33,6 +33,32 @@ namespace WebAppProva2bLab2PabloJoerke.Models
                 .WithRequired(cli => cli.Cliente)
                 .WillCascadeOnDelete(true);
 
+            modelBuilder.Entity<Cliente>()
+                .HasMany(loca => loca.Locacoes )
+                .WithRequired(cli => cli.Cliente)
+                .HasForeignKey(cli => cli.ClienteId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Cliente>()
+                .Property(cli => cli.Nome)
+                .HasColumnType("varchar");
+
+            modelBuilder.Entity<Cliente>()
+                .Property(cli => cli.Email)
+                .HasColumnType("varchar");
+
+            ///////////////////////
+
+            modelBuilder.Entity<Marca>()
+                .HasMany(vei => vei.Veiculos)
+                .WithRequired(mar => mar.Marca)
+                .HasForeignKey(mar => mar.MarcaId)
+                .WillCascadeOnDelete(false);
+
+
+                
+
+
 
 
         }

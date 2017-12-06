@@ -15,5 +15,6 @@ namespace WebAppProva2bLab2PabloJoerke.Models
         public List<Veiculo> Veiculos { get; set; }// lista de veiculos
 
 
+
     }
 }
