@@ -11,7 +11,9 @@ namespace WebAppProva2bLab2PabloJoerke.Models
         public string String { get; set; }
         public string Placa { get; set; }
         public List<Locacao> Locacoes { get; set; } // lista de locaçoes 
-        public List<Marca> Marcas { get; set; } // lista de marcas
+        public Marca MarcaId { get; set; } // FK
+        public Marca Marca { get; set; } // Propriedade de navegaçao 
+
 
     }
 }

@@ -202,6 +202,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Veiculo.cs" />
+    <Compile Include="Models\VeiculoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

@@ -14,5 +14,7 @@ namespace WebAppProva2bLab2PabloJoerke.Models
         public string Bairro { get; set; }
         public string CEP { get; set; }
         public string Numero { get; set; }
+
+        public Cliente Cliente { get; set; } // propriedade de navegaçao
     }
 }
