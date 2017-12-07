@@ -41,11 +41,13 @@ namespace WebAppProva2bLab2PabloJoerke.Models
 
             modelBuilder.Entity<Cliente>()
                 .Property(cli => cli.Nome)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar")
+                ..HasMaxLength(200);
 
             modelBuilder.Entity<Cliente>()
                 .Property(cli => cli.Email)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar")
+                .HasMaxLength(200);
 
             ///////////////////////
 
@@ -55,8 +57,72 @@ namespace WebAppProva2bLab2PabloJoerke.Models
                 .HasForeignKey(mar => mar.MarcaId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Marca>()
+                .Property(mar => mar.Descricao)
+                .HasColumnType("varchar")
+                .HasMaxLength(200);
 
-                
+            /////////////////////
+
+            modelBuilder.Entity<Veiculo>()
+                 .Property(vei => vei.Descricao)
+                 .HasColumnType("varchar")
+                 .HasMaxLength(200);
+
+
+            modelBuilder.Entity<Veiculo>()
+                 .Property(vei => vei.Placa)
+                 .HasColumnType("varchar")
+                 .HasMaxLength(200);
+
+            modelBuilder.Entity<Veiculo>()
+                .HasMany(loc => loc.Locacoes);
+
+
+
+            ///////////////////
+
+            modelBuilder.Entity<Endereco>()
+                .Property(end => end.Logradouro)
+                .HasColumnType("varchar");
+
+            modelBuilder.Entity<Endereco>()
+               .Property(end => end.Bairro)
+               .HasColumnType("varchar");
+
+            modelBuilder.Entity<Endereco>()
+               .Property(end => end.CEP)
+               .HasColumnType("varchar");
+
+            modelBuilder.Entity<Endereco>()
+               .Property(end => end.Numero)
+               .HasColumnType("varchar");
+
+            /////////////////////////////////
+
+            modelBuilder.Entity<Locacao>()
+                .Property(loc => loc.DataLocacao)
+                .HasColumnType("datetime2");
+
+            modelBuilder.Entity<Locacao>()
+                .HasMany(vei => vei.Veiculos)
+                .WithRequired(loc => loc.Locacao)
+                .HasForeignKey(loc => loc.locacaoId)
+                .WillCascadeOnDelete(false);
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
 
 
 

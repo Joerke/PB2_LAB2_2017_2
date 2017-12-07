@@ -10,8 +10,8 @@ namespace WebAppProva2bLab2PabloJoerke.Models
         public int LocacaoId { get; set; }
         public int Numero { get; set; }
         public DateTime DataLocacao { get; set; }
-        public Cliente  ClienteId { get; set; } // fk
-        public Cliente  Cliente { get; set; } // propriedade de navegaçao
+        public Cliente ClienteId { get; set; } // fk
+        public Cliente Cliente { get; set; } // propriedade de navegaçao
         public List<Veiculo> Veiculos { get; set; }// lista de veiculos
 
 

@@ -8,7 +8,7 @@ namespace WebAppProva2bLab2PabloJoerke.Models
     public class Veiculo
     {
         public int VeiculoId { get; set; }
-        public string String { get; set; }
+        public string Descricao { get; set; }
         public string Placa { get; set; }
         public List<Locacao> Locacoes { get; set; } // lista de locaçoes 
         public Marca MarcaId { get; set; } // FK

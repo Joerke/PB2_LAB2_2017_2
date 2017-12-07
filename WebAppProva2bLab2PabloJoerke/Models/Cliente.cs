@@ -11,6 +11,6 @@ namespace WebAppProva2bLab2PabloJoerke.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public List<Locacao> Locacoes { get; set; } // lista de locaçoes
-        public virtual  Endereco Endereco { get; set; } // propriedade de navegaçao
+        public Endereco Endereco { get; set; } // propriedade de navegaçao
     }
 }
